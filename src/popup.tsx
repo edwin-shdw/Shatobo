@@ -37,6 +37,9 @@ export default function IndexPopup() {
       else if(response.site === 'instagram') {
         setStatus('Images unblocked. Just right click on them :)')
       }
+      else if(response.site === 'spotify') {
+        setStatus(`${displayName} extends the contex menu for images!`)
+      }
     })
   })
 

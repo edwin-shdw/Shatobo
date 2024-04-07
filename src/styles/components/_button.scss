@@ -1,0 +1,35 @@
+@use '../settings/variables.scss' as vars;
+
+.btn {
+    --_color: #{vars.$body-color};
+    --_background: none;
+    --_background-hover: none;
+
+    background: var(--_background);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--_color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1;
+    margin: 0;
+    padding-block: 0.5rem;
+    padding-inline:0.75rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 150ms ease-in-out;
+
+    &:hover {
+        color: var(--_color);
+        text-decoration: inherit;
+        background: var(--_background-hover);
+    }
+
+    &--primary {
+        --_color: black;
+        --_background: #{vars.$primary};
+        --_background-hover: #{darken(vars.$primary, 10%)};
+    }
+}

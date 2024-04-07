@@ -1,0 +1,32 @@
+@for $i from 0 through 5 {
+    $margin-classname: '.m';
+    $marign-value: 0.25rem * $i;
+
+    #{$margin-classname}-#{$i} {
+        margin: $marign-value
+    }
+
+    #{$margin-classname}b-#{$i} {
+        margin-block: $marign-value;
+    }
+
+    #{$margin-classname}bs-#{$i} {
+        margin-block-start: $marign-value;
+    }
+
+    #{$margin-classname}be-#{$i} {
+        margin-block-end: $marign-value;
+    }
+
+    #{$margin-classname}i-#{$i} {
+        margin-inline: $marign-value;
+    }
+
+    #{$margin-classname}is-#{$i} {
+        margin-inline-start: $marign-value;
+    }
+
+    #{$margin-classname}ie-#{$i} {
+        margin-inline-end: $marign-value;
+    }
+}

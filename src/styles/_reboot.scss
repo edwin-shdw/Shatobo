@@ -1,0 +1,22 @@
+// Normalization of HTML elements to remove
+// styles targeting irrelevant browsers while applying new styles.
+
+// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`
+* {
+  box-sizing: border-box;
+}
+
+// Remove the margin in all browsers
+body {
+  margin: 0;
+}
+
+// Remove top margins from headings
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start: 0;
+}
+
+// Remove top margins from paragraphs
+p {
+  margin-block-start: 0;
+}

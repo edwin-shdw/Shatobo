@@ -1,0 +1,16 @@
+$displays: (
+    block,
+    inline,
+    inline-block,
+    flex,
+    inline-flex,
+    grid,
+    inline-grid,
+    flow-root,
+);
+
+@each $d in $displays {
+    .d-#{$d} {
+        display: $d;
+    }
+}

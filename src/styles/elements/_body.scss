@@ -1,0 +1,8 @@
+@use '../settings/variables.scss' as vars;
+
+body {
+    background-color: vars.$body-background;
+    color: vars.$body-color;
+    min-inline-size: 25rem;
+    font-size: 1rem;
+}

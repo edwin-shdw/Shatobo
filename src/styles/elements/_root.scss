@@ -1,0 +1,10 @@
+:root {
+    @media (prefers-color-scheme: dark) {
+        color-scheme: dark;
+    }
+    @media (prefers-color-scheme: light) {
+        color-scheme: light;
+    }
+
+    scrollbar-width: thin;
+}

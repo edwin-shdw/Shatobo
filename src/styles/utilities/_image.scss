@@ -1,0 +1,15 @@
+@use '../settings/variables.scss' as vars;
+
+.img {
+    &-fluid {
+        inline-size: 100%;
+    }
+
+    &-hoverable {
+        transition: box-shadow 250ms ease-in-out;
+
+        &:hover {
+            box-shadow: 0 0 0.75rem vars.$primary;
+        }
+    }
+}

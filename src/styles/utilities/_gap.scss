@@ -1,0 +1,7 @@
+$base: 0.25rem;
+
+@for $i from 0 through 5 {
+    .gap-#{$i} {
+        gap: $base * $i;
+    }
+}

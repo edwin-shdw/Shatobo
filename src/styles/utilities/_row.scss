@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    @for $i from 2 through 4 {
+        &-cols-#{$i} > * {
+            flex: 0 0 auto;
+            width: calc(100% / $i);
+            padding: 0.25rem;
+        }
+    }
+}

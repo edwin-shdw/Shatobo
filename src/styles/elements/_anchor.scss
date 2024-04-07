@@ -1,0 +1,11 @@
+@use '../settings/variables.scss' as vars;
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        color: vars.$primary;
+        text-decoration: underline;
+    }
+}

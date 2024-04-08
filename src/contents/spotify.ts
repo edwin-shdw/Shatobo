@@ -1,5 +1,6 @@
 import type { PlasmoCSConfig } from 'plasmo';
 import { Message, type MessageResponse } from '~types/message';
+import { elementWithIdDidMount } from '~utils/element-mount';
 
 export const config: PlasmoCSConfig = {
   matches: ["https://open.spotify.com/**"],
@@ -7,7 +8,7 @@ export const config: PlasmoCSConfig = {
 };
 
 async function appendLinkToContextMenu(title: string, href: string) {
-  await new Promise(r => setTimeout(r, 100));
+  await elementWithIdDidMount('context-menu');
   const contexMenu = document.getElementById('context-menu');
   let contexMenuList = contexMenu?.querySelector('ul');
 

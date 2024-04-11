@@ -2,8 +2,8 @@ import type { PlasmoCSConfig } from 'plasmo';
 import { Message, type MessageResponse } from '~types/message';
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.instagram.com/**"],
-  all_frames: true
+  matches: ['https://www.instagram.com/**'],
+  all_frames: true,
 };
 
 function unblockImages(): void {
@@ -12,19 +12,19 @@ function unblockImages(): void {
   const blockerNodes: NodeListOf<HTMLElement> = document.querySelectorAll(`._aagw, ._ac0y, ._ac0x, ${storyQuerySelector}`);
 
   blockerNodes.forEach(node => {
-      node.remove();
+    node.remove();
   });
 }
 
 window.addEventListener('contextmenu', unblockImages);
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
-  if(message === Message.Scrape) {
-      const response: MessageResponse = {
-          site: 'instagram',
-          imgLinks: null,
-          pathname: window.location.pathname,
-      }
-      sendResponse(response);
+  if (message === Message.Scrape) {
+    const response: MessageResponse = {
+      site: 'instagram',
+      imgLinks: null,
+      pathname: window.location.pathname,
+    };
+    sendResponse(response);
   }
 });

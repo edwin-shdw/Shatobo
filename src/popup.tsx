@@ -35,13 +35,13 @@ export default function IndexPopup() {
         setStatus('Nothing to scrape!');
       }
       else if(response.site === 'instagram') {
-        setStatus('Images unblocked. Just right click on them :)')
+        setStatus('Images unblocked. Just right click on them :)');
       }
       else if(response.site === 'spotify') {
-        setStatus(`${displayName} extends the contex menu for images!`)
+        setStatus(`${displayName} extends the contex menu for images!`);
       }
-    })
-  })
+    });
+  });
 
   return (
     <>
@@ -69,13 +69,13 @@ export default function IndexPopup() {
               Open all
             </button>
             <div className="row row-cols-2">
-            {images.map((image, index) => (
-              <div key={index}>
-                <a href={image} target="_blank">
-                  <img src={image} alt={`Image ${index}`} className="img-fluid img-hoverable" />
-                </a>
-              </div>
-            ))}
+              {images.map((image, index) => (
+                <div key={index}>
+                  <a href={image} target="_blank">
+                    <img src={image} alt={`Image ${index}`} className="img-fluid img-hoverable" />
+                  </a>
+                </div>
+              ))}
             </div>
           </>
         }

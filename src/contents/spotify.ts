@@ -3,18 +3,18 @@ import { Message, type MessageResponse } from '~types/message';
 import { elementWithIdDidMount } from '~utils/element-mount';
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://open.spotify.com/**"],
-  all_frames: true
+  matches: ['https://open.spotify.com/**'],
+  all_frames: true,
 };
 
 async function appendLinkToContextMenu(title: string, href: string) {
   await elementWithIdDidMount('context-menu');
   const contexMenu = document.getElementById('context-menu');
-  let contexMenuList = contexMenu?.querySelector('ul');
+  const contexMenuList = contexMenu?.querySelector('ul');
 
   if(!contexMenu || !contexMenuList) return;
 
-  let item = contexMenuList.querySelector('li').cloneNode();
+  const item = contexMenuList.querySelector('li').cloneNode();
   const link = document.createElement('a');
   link.href = href;
   link.target = '_blank';
@@ -38,10 +38,10 @@ window.addEventListener('mousedown', (event) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
   if(message === Message.Scrape) {
     const response: MessageResponse = {
-        site: 'spotify',
-        imgLinks: null,
-        pathname: window.location.pathname,
-    }
+      site: 'spotify',
+      imgLinks: null,
+      pathname: window.location.pathname,
+    };
     sendResponse(response);
   }
 });

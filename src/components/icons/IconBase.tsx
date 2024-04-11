@@ -18,11 +18,11 @@ export default function IconBase({
       viewBox={viewBox}
       style={{
         verticalAlign: '-0.125rem',
-        ...props.style
+        ...props.style,
       }}
       {...props}
     >
       {children}
     </svg>
-  )
+  );
 }

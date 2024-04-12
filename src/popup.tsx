@@ -1,5 +1,5 @@
 import '~styles/style.scss';
-import Footer from '~components/footer';
+import Footer from '~components/Footer';
 import { useState } from 'react';
 import DownloadIcon from '~components/icons/Download';
 import { displayName } from '../package.json';

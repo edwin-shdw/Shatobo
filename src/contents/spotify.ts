@@ -1,11 +1,18 @@
 import type { PlasmoCSConfig } from 'plasmo';
 import { Message, type MessageResponse } from '~types/message';
-import { elementWithIdDidMount } from '~utils/element-mount';
+import { elementWithIdDidMount, elementWithSelectorDidMount } from '~utils/element-mount';
 
 export const config: PlasmoCSConfig = {
   matches: ['https://open.spotify.com/**'],
   all_frames: true,
 };
+
+(async () => {
+  await elementWithSelectorDidMount('.EaTxqhHk6J4ecKHwpY5m');
+  document.querySelectorAll<HTMLParagraphElement>('.xt5C47eHPYNiriMJxGnC').forEach(node => {
+    node.style.userSelect = 'auto';
+  });
+})();
 
 async function appendLinkToContextMenu(title: string, href: string) {
   await elementWithIdDidMount('context-menu');

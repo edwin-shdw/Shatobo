@@ -11,19 +11,21 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmo": "0.85.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "plasmo": "0.86.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.258",
-    "@types/node": "20.11.5",
-    "@types/react": "18.2.48",
-    "@types/react-dom": "18.2.18",
-    "@typescript-eslint/eslint-plugin": "^7.6.0",
-    "@typescript-eslint/parser": "^7.6.0",
+    "@types/chrome": "0.0.267",
+    "@types/node": "20.12.7",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
     "eslint": "^8.57.0",
-    "typescript": "5.3.3"
+    "path-browserify": "^1.0.1",
+    "typescript": "5.4.5",
+    "url": "^0.11.3"
   },
   "manifest": {
     "host_permissions": [

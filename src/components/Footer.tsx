@@ -5,6 +5,12 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__body">
         <a
+          href="https://github.com/edwin-shdw/Shatobo/blob/main/FEATURES.md"
+          target="_blank"
+        >
+          Features
+        </a>
+        <a
           href="https://github.com/edwin-shdw/Shatobo"
           target="_blank"
         >

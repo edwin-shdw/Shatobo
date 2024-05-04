@@ -18,6 +18,7 @@ export default function IndexPopup() {
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.tabs.sendMessage(tabs[0].id, Message.Scrape, (response: MessageResponse) => {
+      console.log(response);
       if(!response) {
         setStatus(`${displayName} currently does not support this site :(`);
         chrome.runtime.lastError.message;
@@ -39,6 +40,9 @@ export default function IndexPopup() {
       }
       else if(response.site === 'spotify') {
         setStatus(`${displayName} extends the contex menu for images!`);
+      }
+      else if(response.site === 'youtube') {
+        setStatus('Download videos without premium!');
       }
     });
   });

@@ -37,3 +37,23 @@ export function elementWithSelectorDidMount(selector: string) {
     });
   });
 }
+
+export function elementWithTagNameDidMount(tagname: string) {
+  return new Promise(resolve => {
+    if(document.getElementsByTagName(tagname)[0]) {
+      return resolve(document.getElementsByTagName(tagname)[0]);
+    }
+
+    const observer = new MutationObserver(() => {
+      if(document.getElementsByTagName(tagname)[0]) {
+        observer.disconnect();
+        resolve(document.getElementsByTagName(tagname)[0]);
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  });
+}

@@ -6,6 +6,7 @@
 - [TikTok](#tiktok)
 - [Instagram](#instagram)
 - [Spotify](#spotify)
+- [YouTube](#youtube)
 
 ---
 
@@ -42,3 +43,8 @@ right click an cover image making it possible to open the image in a new tab.
 #### Lyrics <!-- omit from toc -->
 
 By default you can't select the lyrics after opening a [track link](https://open.spotify.com/track/4ER6nCcTKGMC1405EtHUy5). Shatobo will correct this so it is possible to select the lyrics.
+
+---
+
+## YouTube
+The download button below videos will redirect to a page where the video can be downloaded for free.

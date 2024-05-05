@@ -3,7 +3,7 @@ import Footer from '~components/Footer';
 import { useState } from 'react';
 import DownloadIcon from '~components/icons/Download';
 import { displayName } from '../package.json';
-import { Message, type MessageResponse } from '~types/message';
+import { Message, Site, type MessageResponse } from '~types/message';
 
 function getTikTokVideoId(pathname: string) {
   const paths = pathname.split('/');
@@ -23,7 +23,7 @@ export default function IndexPopup() {
         setStatus(`${displayName} currently does not support this site :(`);
         chrome.runtime.lastError.message;
       }
-      else if(response.site === 'tiktok') {
+      else if(response.site === Site.TikTok) {
         const videoId = getTikTokVideoId(response.pathname);
         if(response.imgLinks.length) {
           setImages(response.imgLinks);
@@ -35,13 +35,13 @@ export default function IndexPopup() {
         }
         setStatus('Nothing to scrape!');
       }
-      else if(response.site === 'instagram') {
+      else if(response.site === Site.Instagram) {
         setStatus('Images unblocked. Just right click on them :)');
       }
-      else if(response.site === 'spotify') {
+      else if(response.site === Site.Spotify) {
         setStatus(`${displayName} extends the contex menu for images!`);
       }
-      else if(response.site === 'youtube') {
+      else if(response.site === Site.YouTube) {
         setStatus('Download videos without premium!');
       }
     });

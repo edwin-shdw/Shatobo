@@ -1,5 +1,5 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { Message, type MessageResponse } from '~types/message';
+import { Message, Site, type MessageResponse } from '~types/message';
 
 export const config: PlasmoCSConfig = {
   matches: ['https://www.tiktok.com/**'],
@@ -23,7 +23,7 @@ function scrapeTikTokImages(): string[] {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
   if(message === Message.Scrape) {
     const response: MessageResponse = {
-      site: 'tiktok',
+      site: Site.TikTok,
       imgLinks: scrapeTikTokImages(),
       pathname: window.location.pathname,
     };

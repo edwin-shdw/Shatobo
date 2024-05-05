@@ -1,5 +1,5 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { Message, type MessageResponse } from '~types/message';
+import { Message, Site, type MessageResponse } from '~types/message';
 
 export const config: PlasmoCSConfig = {
   matches: ['https://www.instagram.com/**'],
@@ -21,7 +21,7 @@ window.addEventListener('contextmenu', unblockImages);
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
   if (message === Message.Scrape) {
     const response: MessageResponse = {
-      site: 'instagram',
+      site: Site.Instagram,
       imgLinks: null,
       pathname: window.location.pathname,
     };

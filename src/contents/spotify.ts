@@ -1,5 +1,5 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { Message, type MessageResponse } from '~types/message';
+import { Message, Site, type MessageResponse } from '~types/message';
 import { elementWithIdDidMount, elementWithSelectorDidMount } from '~utils/element-mount';
 import colors from '~utils/colors';
 
@@ -52,7 +52,7 @@ window.addEventListener('mousedown', (event) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
   if(message === Message.Scrape) {
     const response: MessageResponse = {
-      site: 'spotify',
+      site: Site.Spotify,
       imgLinks: null,
       pathname: window.location.pathname,
     };

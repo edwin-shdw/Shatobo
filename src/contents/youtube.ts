@@ -1,5 +1,5 @@
 import type { PlasmoCSConfig } from 'plasmo';
-import { Message, type MessageResponse } from '~types/message';
+import { Message, Site, type MessageResponse } from '~types/message';
 import colors from '~utils/colors';
 import { elementWithTagNameDidMount } from '~utils/element-mount';
 
@@ -28,7 +28,7 @@ export const config: PlasmoCSConfig = {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse): void => {
   if (message === Message.Scrape) {
     const response: MessageResponse = {
-      site: 'youtube',
+      site: Site.YouTube,
       imgLinks: null,
       pathname: window.location.pathname,
     };

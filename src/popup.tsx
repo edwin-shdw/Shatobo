@@ -4,12 +4,7 @@ import { useState } from 'react';
 import DownloadIcon from '~components/icons/Download';
 import { displayName } from '../package.json';
 import { Message, Site, type MessageResponse } from '~types/message';
-
-function getTikTokVideoId(pathname: string) {
-  const paths = pathname.split('/');
-  if(paths[paths.length - 2] !== 'video') return '';
-  return paths[paths.length - 1];
-}
+import { getTikTokVideoId } from '~utils/tiktok';
 
 export default function IndexPopup() {
   const [status, setStatus] = useState('');

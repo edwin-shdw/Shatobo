@@ -1,4 +1,5 @@
 @use '../settings/variables.scss' as vars;
+@use 'sass:color';
 
 .btn {
     --_color: #{vars.$body-color};
@@ -30,6 +31,6 @@
     &--primary {
         --_color: black;
         --_background: #{vars.$primary};
-        --_background-hover: #{darken(vars.$primary, 10%)};
+        --_background-hover: #{color.scale(vars.$primary, $lightness: -15%)};
     }
 }
